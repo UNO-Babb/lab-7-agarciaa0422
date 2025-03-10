@@ -30,6 +30,21 @@ def isPrime(p):
   
   return True
 
+def isPrime2(p):
+  """Returns boolean (True/False) if the value given is prime."""
+  if p == 1:
+    return False
+  if p == 2:
+    return True
+  if p == 3:
+    return False
+  if isEven(p):
+    return False
+  
+  for div in range(3, p // 2, 2):
+    if p % div == 0:
+      return False
+
 def isEven(n):
   """Returns boolean about given value being even."""
 
@@ -70,6 +85,12 @@ def main():
   if isEven(num):
     print("%d is an even number" %(num))
 
+#def summation_prime(lim):
+    #total_summation = 0
+    #for num in range(2, lim):
+        #if isPrime(num):
+            #total_summation = total_summation + num
+    #return total_summation
 
 if __name__ == '__main__':
     main()
